@@ -58,7 +58,7 @@ def main( ):
                     if mark.isdigit( ) and 0 <= int(mark) <= 100:
                         break
                     else:
-                        print("请输入1~100的数字")
+                        print("请输入0~100的数字")
                 add_student(students,name,subject,mark)
             elif option == "2":
                 if students:
