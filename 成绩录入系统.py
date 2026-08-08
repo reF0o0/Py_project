@@ -41,7 +41,7 @@ def show_students(students):
         for subject,mark in scores.items( ):
             print(name,subject,mark)
         avg = sum(scores.values( ))/len(scores)
-        print(f"{name},平均分：{avg}")
+        print(f"{name} 平均分：{avg}")
 
 def main( ):
     students = { }
@@ -56,7 +56,7 @@ def main( ):
                 while True:
                     mark = input("分数：")
                     if mark.isdigit( ) and 0 <= int(mark) <= 100:
-                            break
+                        break
                     else:
                         print("请输入1~100的数字")
                 add_student(students,name,subject,mark)
