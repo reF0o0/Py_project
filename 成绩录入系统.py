@@ -29,37 +29,39 @@
 #         add_student(students,name,age)
 # show_student(students)
 
-#成绩记录系统
-def add_student(students,name,subject,mark):
+# 成绩记录系统
+def add_student(students, name, subject, mark):
     if name not in students:
-        students[name] = {subject:int(mark)}
+        students[name] = {subject: int(mark)}
     else:
         students[name][subject] = int(mark)
 
+
 def show_students(students):
-    for name,scores in students.items( ):
-        for subject,mark in scores.items( ):
-            print(name,subject,mark)
-        avg = sum(scores.values( ))/len(scores)
+    for name, scores in students.items():
+        for subject, mark in scores.items():
+            print(name, subject, mark)
+        avg = sum(scores.values()) / len(scores)
         print(f"{name} 平均分：{avg}")
 
-def main( ):
-    students = { }
+
+def main():
+    students = {}
     while True:
         print("欢迎使用学生成绩录入系统")
         print("1  添加学生成绩\n2  查询所有成绩\n'q'退出")
         option = input("输入内容：")
-        if option in ("1","2","q"):
+        if option in ("1", "2", "q"):
             if option == "1":
                 name = input("学生姓名：")
                 subject = input("学科：")
                 while True:
                     mark = input("分数：")
-                    if mark.isdigit( ) and 0 <= int(mark) <= 100:
+                    if mark.isdigit() and 0 <= int(mark) <= 100:
                         break
                     else:
                         print("请输入0~100的数字")
-                add_student(students,name,subject,mark)
+                add_student(students, name, subject, mark)
             elif option == "2":
                 if students:
                     show_students(students)
@@ -71,5 +73,6 @@ def main( ):
         else:
             print("输入错误")
 
+
 if __name__ == "__main__":
-    main( )
+    main()
